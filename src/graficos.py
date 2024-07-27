@@ -23,7 +23,7 @@ def pregunta_1(df):
 
     fig_pizza.update_layout(
         title={'text':'5 Productos Más Vendidos Históricamente',
-               'y':0.90, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top'},
+               'y':0.90, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top', 'font':{'size':15}},
         #width = 400,
         #height=350,
         template='plotly_dark',
@@ -33,7 +33,7 @@ def pregunta_1(df):
             color='white'
         ),
         showlegend=False,
-        margin=dict(l=0, r=0, t=70, b=20)
+        margin=dict(l=0, r=0, t=70, b=0)
     )
 
     fig_pizza.update_traces(textposition='inside', textinfo='percent+label', textfont=dict(color='white'))
