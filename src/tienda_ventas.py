@@ -15,11 +15,11 @@ st.set_page_config(layout= 'wide')
 st.title('Análisis de Ventas y Rendimiento 📈')
 
 
-st.sidebar.image(r'C:\Users\Chamo\Desktop\Python\E_comerce\src\Python_PNG.png')
+st.sidebar.image('src/Python_PNG.png')
 
 
 # habrir df y darle formato a la columna de tiempo
-df_final = pd.read_csv(r'C:\Users\Chamo\Desktop\Python\E_comerce\src\df_final.csv', sep=',')
+df_final = pd.read_csv('src/df_final.csv', sep=',')
 df_final['fecha_compra'] = pd.to_datetime(df_final['fecha_compra'], errors='coerce')
 df_final['año_compra'] = df_final['año_compra'].astype(str)
 
