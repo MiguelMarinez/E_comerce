@@ -33,7 +33,7 @@ def pregunta_1(df):
             color='white'
         ),
         showlegend=False,
-        margin=dict(l=0, r=0, t=70, b=0)
+        margin=dict(l=10, r=10, t=100, b=10)
     )
 
     fig_pizza.update_traces(textposition='inside', textinfo='percent+label', textfont=dict(color='white'))
