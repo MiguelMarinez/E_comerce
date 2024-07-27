@@ -22,7 +22,7 @@ def pregunta_1(df):
                    )
 
     fig_pizza.update_layout(
-        title={'text':'5 Productos Más Vendidos Históricamente',
+        title={'text':'5 Productos Más Vendidos',
                'y':0.90, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top', 'font':{'size':15}},
         #width = 400,
         #height=350,
