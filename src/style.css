@@ -1,0 +1,28 @@
+/* styles/style.css */
+
+.custon-container {
+  background-color: #3b3d46;
+  border: 1px solid #DCDCDC;
+  border-color: #5a5e73;
+  width: 25%;
+  min-width: 90px;
+  min-height: 70px;
+    /* PADDING */
+  padding: 0;
+  border-radius: 10px;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  text-align: center;
+  overflow: auto;
+  
+}
+
+.centrado {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+}

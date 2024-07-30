@@ -5,12 +5,22 @@ import graficos as graf
 st.set_page_config(layout= 'wide')
 
 # CSS css
-#def load_css(file):
-    #with open(file) as f:
-        #st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+with open('src\style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 #load_css('style.css')
-
+# columnas top contienen total revenue y el total de ventas.
+top_col1, top_col2, top_col3 = st.columns(3)
+with top_col1:
+    st.caption('Total Ingresos')
+    placeholder = st.empty() # espacio reselvado
+with top_col2:
+    st.caption('')
+with top_col3:
+    st.caption('Total ventas de Productos')
+    placeholder2 = st.empty() # espacio reselvado
+    
+    
 
 st.title('Análisis de Ventas y Rendimiento 📈')
 
@@ -69,3 +79,19 @@ with col2:
 #MOSTRAL LOS GRAFICOS inferiores que no estan dentro de las columnas.
 st.plotly_chart(grafico_linea, use_container_width=True)
 st.plotly_chart(grafico_barra, use_container_width=True)
+
+
+total_ingresos = df_final['ingresos_netos'].sum()
+total_ventas = df_final['ingresos_netos'].sum()
+
+def formatear_numero(numero):
+    if numero >= 1_000_000:
+        return f"{numero/1_000_000:.2f}M"
+    elif numero >= 1_000:
+        return f"{numero / 1_000:.2f}K"
+    else:
+        return str(numero)
+total_ingresos_f = formatear_numero(total_ingresos)
+total_ventas_f = formatear_numero(total_ventas)
+placeholder.markdown(f'<div class="custon-container">${total_ingresos_f}</div>', unsafe_allow_html=True)
+placeholder2.markdown(f'<div class="custon-container">{total_ventas_f}</div>', unsafe_allow_html=True)

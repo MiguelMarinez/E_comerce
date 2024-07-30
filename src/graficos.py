@@ -24,8 +24,7 @@ def pregunta_1(df):
     fig_pizza.update_layout(
         title={'text':'5 Productos Más Vendidos',
                'y':0.90, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top', 'font':{'size':15}},
-        #width = 400,
-        #height=350,
+       
         template='plotly_dark',
         font=dict(
             family='Arial, sans-serif',
@@ -38,7 +37,7 @@ def pregunta_1(df):
 
     fig_pizza.update_traces(textposition='inside', textinfo='percent+label', textfont=dict(color='white'))
     
-    fig_pizza.update_traces(hovertemplate="<br><span style='color: #ffffff;'>Cantidad: $%{value:,.0f}<extra></extra>")
+    fig_pizza.update_traces(hovertemplate="<br><span style='color: #ffffff;'>Cantidad: %{value:,.0f}<extra></extra>")
     
     return fig_pizza
 
@@ -170,8 +169,8 @@ def pregunta_4(df):
 
 
     fig.update_layout(#width=600, height=500,
-        paper_bgcolor='rgb(17, 21, 28)', 
-        plot_bgcolor='rgb(17, 21, 28)',
+        paper_bgcolor='rgb(18, 22, 29)', 
+        plot_bgcolor='rgb(18, 22, 29)',
         title_x=0.12,
         margin={'r':0,'t':70,'l':5,'b':0},
         mapbox=dict(center=dict(lat=-14.2350, lon=-51.9253),
@@ -181,7 +180,7 @@ def pregunta_4(df):
                     "source": brasil_geojson,
                     "type": "fill",
                     "below": "traces",
-                    "color": "rgba(0, 0, 0, 0)"  # Hacer el área de Brasil transparente
+                    "color": "rgba(18, 22, 29)"  # Hacer el área de Brasil transparente
                 },
                 {
                     "source": {
@@ -198,7 +197,7 @@ def pregunta_4(df):
                     },
                         "type": "fill",
                         "below": "traces",
-                        "color": "rgb(14,17,23)"  # Fondo negro para áreas fuera de Brasil
+                        "color": "rgb(18, 22, 29)"  # Fondo negro para áreas fuera de Brasil
                 }
                     ]
                 
