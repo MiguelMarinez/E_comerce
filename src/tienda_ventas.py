@@ -21,6 +21,17 @@ with top_col3:
     placeholder2 = st.empty() # espacio reselvado
     
     
+# funcion para agragar columna de temporadas al df
+def temporada(mes):
+    if mes in [12,1,2]:
+        return 'Invierno'
+    elif mes in [3,4,5]:
+        return 'Primavera'
+    elif mes in [6,7,8]:
+        return 'Verano'
+    elif mes in [9,10,11]:
+        return 'Otoño'
+    
 
 st.title('Análisis de Ventas y Rendimiento 📈')
 
@@ -32,6 +43,8 @@ st.sidebar.image('src/Python_PNG.png')
 df_final = pd.read_csv('src/df_final.csv', sep=',')
 df_final['fecha_compra'] = pd.to_datetime(df_final['fecha_compra'], errors='coerce')
 df_final['año_compra'] = df_final['año_compra'].astype(str)
+# crear columna temporada
+df_final['temporada'] = df_final['mes_compra'].apply(temporada)
 
 
 
@@ -57,7 +70,16 @@ año = st.sidebar.multiselect('Years', años)
 
 if año:
     df_final = df_final[df_final['año_compra'].isin(año)]
-    
+  
+  
+# filtro para las temporadas
+temporadas = sorted(list(df_final['temporada'].unique()))
+temporadas.insert(0,'All Seasons')
+temporada = st.sidebar.selectbox('Select Season', temporadas)
+
+if temporada != 'All Seasons':
+    df_final = df_final[df_final['temporada'] == temporada]
+      
 
 # LLAMAR LOS GRAFICOS
 grafico_linea = graf.pregunta_2(df_final)
