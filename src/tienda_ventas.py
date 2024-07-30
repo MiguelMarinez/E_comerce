@@ -82,7 +82,7 @@ st.plotly_chart(grafico_barra, use_container_width=True)
 
 
 total_ingresos = df_final['ingresos_netos'].sum()
-total_ventas = df_final['ingresos_netos'].sum()
+total_ventas = df_final['cantidad'].sum()
 
 def formatear_numero(numero):
     if numero >= 1_000_000:
