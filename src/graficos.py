@@ -54,19 +54,19 @@ def pregunta_2(df):
     #ingresos_historico.head()
     
     # para mapear números de mes a nombres de mes
-    month_names = {1: 'Enero', 2: 'Febrero', 3: 'Marzo', 4: 'Abril', 5: 'Mayo', 6: 'Junio', 
-               7: 'Julio', 8: 'Agosto', 9: 'Septiembre', 10: 'Octubre', 11: 'Noviembre', 12: 'Diciembre'}
+    month_names = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'Jun', 
+               7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
 
 
     fig = px.line(ingresos_historico, x='mes_compra', y='ingresos_netos', color='año_compra', markers=True,
                 labels={'ingresos_netos': 'Ingresos Netos', 'mes_compra': 'Mes', 'año_compra': 'Año'},
-                title='Evolución Histórica de Ingresos Netos por Año',
+                title='Historical Evolution of Net Revenue by Year',
                 hover_data={'ingresos_netos': ':.2f'})
 
     fig.update_layout(
-        xaxis_title='Mes',
-        yaxis_title='Ingresos Netos',
-        legend_title_text='Año',
+        xaxis_title='Month',
+        yaxis_title='Net Revenue',
+        legend_title_text='Year',
         template='plotly_dark', 
         xaxis=dict(
             tickmode='array',
@@ -85,7 +85,7 @@ def pregunta_2(df):
         fig.update_traces(
             line=dict(color=color),
             selector=dict(name=str(year)),
-            hovertemplate=f'Año: {year}<br>Mes: %{{x}}<br>Ingresos Netos: %{{y:$,.2f}}<extra></extra>')
+            hovertemplate=f'Year: {year}<br>Mes: %{{x}}<br>Net Revenue: %{{y:$,.2f}}<extra></extra>')
 
 
     return fig
