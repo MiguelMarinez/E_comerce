@@ -164,7 +164,7 @@ def pregunta_4(df):
                             center={"lat": -14.2350, "lon": -51.9253},
                             mapbox_style="carto-positron",
                             zoom=2.5,
-                            title='Ingresos por Estados en Brasil')
+                            title='Revenue by State in Brazil')
 
 
 
@@ -206,7 +206,7 @@ def pregunta_4(df):
     
     
         coloraxis_colorbar=dict(
-        title='Ingresos$',),
+        title='Revenue($)',),
         font=dict(
             family="Arial",  
             size=12, 
@@ -216,7 +216,7 @@ def pregunta_4(df):
     
 
 
-    fig.update_traces(hovertemplate="<b>Ciudad: %{customdata[0]}</b><br>Ingresos Totales : $%{customdata[1]:,.2f}<extra></extra>", 
+    fig.update_traces(hovertemplate="<b>City: %{customdata[0]}</b><br>Total Revenue : $%{customdata[1]:,.2f}<extra></extra>", 
                   marker_line_width=0)
 
     return fig
