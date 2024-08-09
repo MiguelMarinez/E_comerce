@@ -85,7 +85,7 @@ def pregunta_2(df):
         fig.update_traces(
             line=dict(color=color),
             selector=dict(name=str(year)),
-            hovertemplate=f'Year: {year}<br>Mes: %{{x}}<br>Net Revenue: %{{y:$,.2f}}<extra></extra>')
+            hovertemplate=f'Year: {year}<br>Month: %{{x}}<br>Net Revenue: %{{y:$,.2f}}<extra></extra>')
 
 
     return fig
