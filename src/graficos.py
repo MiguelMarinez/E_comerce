@@ -117,14 +117,14 @@ def pregunta_3(df):
     # Configurar el diseño del gráfico
     fig.update_layout(
         barmode='group',
-        title='Ingresos Netos por Vendedor y Año',
-        xaxis=dict(title='Vendedor'),
-        yaxis=dict(title='Ingresos Netos'),
-        legend=dict(title='Año'),
+        title='Net Revenue by Seller per Year',
+        xaxis=dict(title='Seller'),
+        yaxis=dict(title='Net Revenue'),
+        legend=dict(title='Year'),
         template='plotly_dark',
     )
 
-    fig.update_traces(hovertemplate="<br><span style='color: #ffffff;'>Cantidad: $%{value:,.0f}<extra></extra>")
+    fig.update_traces(hovertemplate="<br><span style='color: #ffffff;'>Quantity: $%{value:,.0f}<extra></extra>")
 
     return fig
 
