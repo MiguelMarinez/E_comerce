@@ -16,13 +16,13 @@ def pregunta_1(df):
     fig_pizza = px.pie(top_productos, 
                    values='cantidad', 
                    names='tipo_producto', 
-                   title='Top 5 Productos Más Vendidos Históricamente',
+                   title='Top 5 Best-Selling Products',
                    color='tipo_producto',
                    color_discrete_sequence=px.colors.sequential.Blues_r  # Usa una escala de azules
                    )
 
     fig_pizza.update_layout(
-        title={'text':'5 Productos Más Vendidos',
+        title={'text':'Top 5 Best-Selling Products',
                'y':0.90, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top', 'font':{'size':15}},
        
         template='plotly_dark',
@@ -37,7 +37,7 @@ def pregunta_1(df):
 
     fig_pizza.update_traces(textposition='inside', textinfo='percent+label', textfont=dict(color='white'))
     
-    fig_pizza.update_traces(hovertemplate="<br><span style='color: #ffffff;'>Cantidad: %{value:,.0f}<extra></extra>")
+    fig_pizza.update_traces(hovertemplate="<br><span style='color: #ffffff;'>Quantity: %{value:,.0f}<extra></extra>")
     
     return fig_pizza
 
