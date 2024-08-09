@@ -12,28 +12,28 @@ with open('src/style.css') as f:
 # columnas top contienen total revenue y el total de ventas.
 top_col1, top_col2, top_col3 = st.columns(3)
 with top_col1:
-    st.caption('Total Ingresos')
+    st.caption('Total Revenue')
     placeholder = st.empty() # espacio reselvado
 with top_col2:
     st.caption('')
 with top_col3:
-    st.caption('Total ventas de Productos')
+    st.caption('Total Product Sales')
     placeholder2 = st.empty() # espacio reselvado
     
     
 # funcion para agragar columna de temporadas al df
 def temporada(mes):
     if mes in [12,1,2]:
-        return 'Invierno'
+        return 'Winter'
     elif mes in [3,4,5]:
-        return 'Primavera'
+        return 'Spring'
     elif mes in [6,7,8]:
-        return 'Verano'
+        return 'Summer'
     elif mes in [9,10,11]:
-        return 'Otoño'
+        return 'Fall'
     
 
-st.title('Análisis de Ventas y Rendimiento 📈')
+st.title('Sales and Performance Analysis 📈')
 
 
 st.sidebar.image('src/Python_PNG.png')
